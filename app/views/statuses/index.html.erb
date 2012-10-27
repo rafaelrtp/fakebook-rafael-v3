@@ -1,23 +1,52 @@
-<h1>Listing statuses</h1>
+<section id="news-feed-nav">
+  <div class="welcome-box">
+    <a href="/news-feed"></a>
+    <div class="user-avatar">
+      <div class="user-avatar-inner">
+        <img width="40" height="40" src="/assets/user-chuck.jpg" />
+      </div>
+    </div>
+    <div class="user-name">
+      Chuck Norris
+    </div>
+  </div>
+</section>
 
-<table>
-  <tr>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @statuses.each do |status| %>
-  <tr>
-    <td><%= status.content %></td>
-    <td><%= link_to 'Show', status %></td>
-    <td><%= link_to 'Edit', edit_status_path(status) %></td>
-    <td><%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Status', new_status_path %>
+<section id="news-feed">
+  <div class="box">
+    
+    <header class="box-header">
+      <%= link_to 'Atualizar Status', new_status_path, class: 'button' %>
+    </header>
+    
+    <div class="box-content">
+      <div class="list-view ui-comments-list">
+        <ul>
+          <% @statuses.each do |status| %>
+          <li>
+            <div class="item-image usuario">
+              <span class="item-image-wrap"><img width="40" height="40" src="/assets/user-chuck.jpg" /></span>
+            </div>
+            <div class="item-info">
+              <div class="item-activity">
+                <div class="user-name">
+                  <a href="/profile">Chuck Norris</a>
+                </div>
+                <div class="user-comment">
+                  <%= simple_format(status.content) %>
+                </div>
+                <div class="item-actions">
+                  <span class="action-like"><a href="#">Curtir</a></span><span class="action-comment"><a href="#">Comentar</a></span><span class="count-likes"><a href="#">2</a></span><span class="count-comments"><a href="#">0</a></span><span class="timestamp">20 de Setembro</span>
+                </div>
+              </div>
+            </div>
+            <%= link_to 'Show', status %>
+            <%= link_to 'Edit', edit_status_path(status) %>
+            <%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
