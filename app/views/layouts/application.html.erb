@@ -11,32 +11,43 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body class="news-feed news-feed_index">
+  <body class="index">
     <header id="header" role="banner">
-  
       <div id="header-inner">
         <div id="logo">
-          <a href="/news-feed" title="Fakebook">Fakebook</a>
+          <a href="/" title="Fakebook">Fakebook</a>
         </div>
-      
-        <nav class="nav-user" role="navigation">
-          <ul>
-            <li class="item-avatar">
-              <div class="user-avatar small">
-                <div class="user-avatar-inner">
-                  <img width="24" height="24" src="/assets/user-chuck.jpg" />
-                </div>
-              </div>
-            </li>
-            <li class="item-username">
-              <a href="/edit-profile" title="Minha Conta"><b>Chuck Norris</b></a>
-            </li>
-            <li class="item-logout">
-              <a href="/">Sair</a>
-            </li>
-          </ul>
-        </nav>
+        
+        
+        <div id="user-login">
+          <form action="" method="get">
+            <div class="user-login-email">
+              <label for="field-email">Email</label><input id="field-email" tabindex="1" type="text">
+            </div>
+            <div class="user-login-password">
+              <label for="field-password">Senha</label><input id="field-password" tabindex="2" type="password"><a class="text" href="#" tabindex="4">Esqueceu sua senha?</a>
+            </div>
+            <div class="user-login-actions">
+              <button class="small button" tabindex="3" type="Submit">Entrar</button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- <nav class="nav-user" role="navigation">
+                  <ul>
+                    <li class="item-avatar">
+                      <div class="user-avatar small">
+                        <div class="user-avatar-inner"><img width="24" height="24" src="/assets/user-chuck.jpg" /></div>
+                      </div>
+                    </li>
+                    <li class="item-username"><a href="/edit-profile" title="Minha Conta"><b>Chuck Norris</b></a></li>
+                    <li class="item-logout"><a href="/">Sair</a></li>
+                  </ul>
+                </nav> -->
+        
+        <!--end #user-login-->
       </div>
+      <!--end #header-inner-->
     </header>
 
     <div id="content">
